@@ -7,6 +7,6 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 #=== Configuration dav.conf ===
-COPY dav.conf /usr/local/apache2/conf/conf-available/dav.conf
+#COPY dav.conf /usr/local/apache2/conf/conf-available/dav.conf
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
