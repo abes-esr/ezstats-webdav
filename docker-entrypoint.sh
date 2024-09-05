@@ -28,7 +28,7 @@ if [ "x$SERVER_NAMES" != "x" ]; then
 fi
 
 
-# Fixé dans le dav.conf : $AUTH_TYPE = Digest // $Realm = WebDAV
+# Mis "en dur" dans le dav.conf : $AUTH_TYPE = Digest // $Realm = WebDAV
 
 # Can't run `htdigest` non-interactively, so use other tools.
 HASH="`printf '%s' "$USERNAME:WebDAV:$PASSWORD" | md5sum | awk '{print $1}'`"
@@ -61,5 +61,5 @@ fi
 # Create directories for Dav data and lock database.
 [ ! -d "/var/lib/dav/data" ] && mkdir -p "/var/lib/dav/data"
 [ ! -e "/var/lib/dav/DavLock" ] && touch "/var/lib/dav/DavLock"
-echo "ici test"
+
 exec "$@"
