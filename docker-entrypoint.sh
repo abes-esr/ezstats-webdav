@@ -33,7 +33,7 @@ fi
 # Can't run `htdigest` non-interactively, so use other tools.
 HASH="`printf '%s' "$USERNAME:WebDAV:$PASSWORD" | md5sum | awk '{print $1}'`"
 printf '%s\n' "$USERNAME:WebDAV:$HASH" > /user.passwd
-
+chmod 644 /user.passwd
 
 # If specified, generate a selfsigned certificate.
 if [ "${SSL_CERT:-none}" = "selfsigned" ]; then
